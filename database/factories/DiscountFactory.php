@@ -18,7 +18,10 @@ class DiscountFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'code' => $this->faker->unique()->bothify('?????####'),
+            'quantity' => $this->faker->numberBetween(1, 100),
+            'percentage' => $this->faker->randomFloat(2, 1, 100),
+            'expiry_date' => $this->faker->dateTimeBetween('+1 week', '+1 year'),
         ];
     }
 }
